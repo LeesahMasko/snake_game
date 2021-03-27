@@ -6,14 +6,12 @@ import {
 } from '../lib/utils.js';
 
 import './Board.css';
-
 /**
  * TODO: add a more elegant UX for before a game starts and after a game ends.
  * A game probably shouldn't start until the user presses an arrow key, and
  * once a game is over, the board state should likely freeze until the user
  * intentionally restarts the game.
  */
-
 class LinkedListNode {
   constructor(value) {
     this.value = value;
@@ -73,7 +71,6 @@ const Board = () => {
       handleKeydown(e);
     });
   }, []);
-
   // `useInterval` is needed; you can't naively do `setInterval` in the
   // `useEffect` above. See the article linked above the `useInterval`
   // definition for details.
@@ -138,7 +135,6 @@ const Board = () => {
 
     setSnakeCells(newSnakeCells);
   };
-
   // This function mutates newSnakeCells.
   const growSnake = newSnakeCells => {
     const growthNodeCoords = getGrowthNodeCoords(snake.tail, direction);
@@ -163,7 +159,6 @@ const Board = () => {
     const tailNextNodeDirection = getNextNodeDirection(snake.tail, direction);
     const newDirection = getOppositeDirection(tailNextNodeDirection);
     setDirection(newDirection);
-
     // The tail of the snake is really the head of the linked list, which
     // is why we have to pass the snake's tail to `reverseLinkedList`.
     reverseLinkedList(snake.tail);

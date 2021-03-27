@@ -1,6 +1,6 @@
 .board {
   outline: 2px solid rgb(134, 154, 189);
-  background-color: aqua;
+  background-color: rgb(4, 136, 136);
   width: 525px;
   margin-left: 20px;
 }
